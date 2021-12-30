@@ -1,0 +1,30 @@
+@import "../Styles/media_query/footer-media.css";
+.footer {
+    background-color: #25252b;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    /* align-items: center; */
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.copy-right {
+    color: white;
+    padding: 20px;
+    font-size: large;
+}
+.copy-right > span {
+    color: cornflowerblue;
+    font-weight: 600;
+}
+.copy-right span a {
+    text-decoration: none;
+    color: cornflowerblue;
+}

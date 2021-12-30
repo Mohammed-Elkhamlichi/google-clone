@@ -1,0 +1,13 @@
+@media (max-width: 500px) {
+    .footer {
+        flex-direction: column;
+    }
+}
+@media (min-width: 500px) and (max-width: 1024px) {
+    .footer {
+        flex-direction: flex;
+    }
+    .copy-right {
+        padding: 10px;
+    }
+}
