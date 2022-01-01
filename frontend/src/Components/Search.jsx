@@ -3,14 +3,18 @@ import SearchIcon from "@mui/icons-material/Search";
 import MicIcon from "@mui/icons-material/Mic";
 import { useNavigate } from "react-router-dom";
 import "../Styles/Search.css";
-import { useSearchValue } from "./StateProvider";
+import { useSearchContext } from "./StateProvider";
 import { actionTypes } from "./reducer";
 
 const Search = ({ hideButtons = false }) => {
     // use Reduce to memorise searsh  input value
-    const [{}, dispatch] = useSearchValue();
+    const [state, dispatch] = useSearchContext();
+
     // get The Search input value
-    const searchInput = useRef(null);
+    let searchInput = useRef(null);
+    useEffect(() => {
+        searchInput.current.focus();
+    }, []);
 
     // navigate to an other page
     const navigate = useNavigate();
@@ -19,14 +23,16 @@ const Search = ({ hideButtons = false }) => {
     const search = (e) => {
         e.preventDefault();
         if (searchInput.current.value) {
+            // dispatch actions to the reducer
             dispatch({
                 type: actionTypes.SET_SEARCH_TERM,
                 term: searchInput.current.value,
                 found: true,
             });
+
+            // navigate to the search page
             navigate("/search", { replace: false });
         } else {
-            console.log("you put nothing to search");
             dispatch({
                 type: actionTypes.SET_SEARCH_TERM,
                 term: null,
@@ -39,16 +45,16 @@ const Search = ({ hideButtons = false }) => {
         <>
             <form className='google__search__form'>
                 <div className='google__search__input'>
-                    <SearchIcon style={{ color: "gray", padding: "10px" }} />
+                    <SearchIcon className='search__icon' />
                     <input
                         ref={searchInput}
                         className='search__input'
                         type='text'
-                        name=''
-                        id=''
+                        placeholder='Search...'
                     />
-                    <MicIcon style={{ padding: "10px" }} />
+                    <MicIcon className='mic__icon' />
                 </div>
+
                 {!hideButtons ? (
                     <div className='google__search__btn'>
                         <button type='submit' onClick={search}>

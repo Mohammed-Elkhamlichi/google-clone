@@ -1,0 +1,178 @@
+.search_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px solid cornflowerblue;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #25252b;
+}
+
+.search_section .header_top {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    max-height: 100px;
+    box-sizing: content-box;
+}
+.search_section .header_sub {
+    flex-wrap: nowrap;
+    width: 80%;
+    display: flex;
+    flex: flex-start;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    cursor: pointer;
+    padding: 0;
+}
+.search_section .header_sub .header_sub_item {
+    color: gray;
+    padding: 0;
+    margin: 0;
+}
+.search_header > .search_google_logo {
+    box-sizing: border-box;
+}
+.search_header .search_google_logo .google_image {
+    padding-top: 10px;
+    max-height: 50px;
+    height: 50px;
+    margin: 0px 10px;
+}
+
+.search_form {
+    flex: 1;
+    padding: 0;
+    margin-top: 0;
+    padding-right: 10px;
+    height: 80px;
+}
+/* display google response container */
+.response__container {
+    display: flex;
+    margin: 150px auto 80px auto;
+    flex-direction: column;
+    padding-top: 0;
+    align-items: center;
+    /* justify-content: ; */
+    width: 90%;
+    box-sizing: content-box;
+}
+.response__container .response__info {
+    font-size: smaller;
+    margin-bottom: 10px;
+    padding-top: 0;
+    margin-top: 0;
+}
+.response__container .response__item {
+    background-color: #f0f0f0;
+    margin-top: 5px;
+    padding: 1vw;
+    width: 60vw;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+.response__container .response__item:hover {
+    transform: scale(1.02);
+}
+
+.response__item a {
+    /* text-decoration: none; */
+}
+.response__item img {
+    width: 20px;
+    height: 20px;
+}
+@media (max-width: 800px) {
+    .search_section .header_top {
+        display: flex;
+        flex-direction: row;
+        /* align-items: center; */
+        padding: 0;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        min-height: 100px;
+        width: 100vw;
+    }
+    .search_section .header_sub {
+        flex-wrap: nowrap;
+        width: 80%;
+        display: flex;
+        flex: flex-start;
+        flex-direction: row;
+        justify-content: space-around;
+        /* align-items: start; */
+        margin: 10px auto;
+        cursor: pointer;
+    }
+    .search_section .header_sub .header_sub_item {
+        color: gray;
+    }
+    .search_header > .search_google_logo {
+        display: none;
+    }
+    .search_header .search_google_logo .google_image {
+        display: none;
+    }
+
+    .search_form {
+        box-sizing: border-box;
+        flex: 1;
+        padding: 0;
+        margin-top: 0;
+        /* height: 40px; */
+        width: 100vw;
+    }
+    .search_form .search_input {
+        width: 100%;
+        margin-top: 0px;
+        flex: flex-start;
+        padding: 0;
+    }
+    /* display google response container */
+    .response__container {
+        display: flex;
+        margin: 180px auto;
+        flex-direction: column;
+        margin-bottom: 80px;
+        padding-top: 0;
+        align-items: center;
+        width: 90%;
+        box-sizing: border-box;
+    }
+    .response__container .response__info {
+        font-size: smaller;
+        margin-bottom: 10px;
+        padding-top: 0;
+        margin-top: 0;
+    }
+    .response__container .response__item {
+        /* background-color: #f0f0f0; */
+        background-color: none;
+        border-radius: 0px;
+        margin-top: 15px;
+        padding: 15px;
+        width: 100%;
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+    }
+    .response__container .response__item:hover {
+        transform: scale(1.02);
+    }
+
+    .response__item a {
+        /* text-decoration: none; */
+    }
+    .response__item img {
+        width: 20px;
+        height: 20px;
+    }
+}

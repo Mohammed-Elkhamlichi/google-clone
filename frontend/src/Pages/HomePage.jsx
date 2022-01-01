@@ -6,8 +6,17 @@ import HomeBody from "../Components/HomeBody";
 const HomePage = () => {
     return (
         <>
-            <HomeHeader />
-            <HomeBody />
+            <style>
+                {`
+        .home__section{
+            height: 100vh !important;
+        }
+    `}
+            </style>
+            <section className='home__section'>
+                <HomeHeader />
+                <HomeBody />
+            </section>
         </>
     );
 };

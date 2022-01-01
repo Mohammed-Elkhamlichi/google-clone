@@ -10,7 +10,7 @@ const HomeBody = () => {
                 <div className='google__logo'>
                     <img src={googleLogo} alt='google.com' />
                 </div>
-                <Search hideButtons />
+                <Search />
             </section>
         </>
     );

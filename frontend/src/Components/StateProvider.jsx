@@ -9,4 +9,4 @@ export const SearchProvider = ({ reducer, initialState, children }) => {
     );
 };
 
-export const useSearchValue = () => useContext(searchContext);
+export const useSearchContext = () => useContext(searchContext);

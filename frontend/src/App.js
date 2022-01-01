@@ -5,7 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import PageNotFound from "./Pages/NotFoundPage";
 import Footer from "./Components/Footer";
-
+import ImagesPage from "./Pages/ImagesPage";
+import NewsPage from "./Pages/NewsPage";
 
 function App() {
     return (
@@ -13,6 +14,8 @@ function App() {
             <BrowserRouter>
                 <Routes>
                     <Route exact path='/' element={<HomePage />} />
+                    <Route path='/images' element={<ImagesPage />} />
+                    <Route path='/news' element={<NewsPage />} />
                     <Route path='/search' element={<SearchPage />} />
 
                     <Route path='*' element={<PageNotFound />} />
